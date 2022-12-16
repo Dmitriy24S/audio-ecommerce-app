@@ -1,0 +1,38 @@
+.hero {
+  background-color: var(--blackMedium);
+  color: var(--grayLight);
+  text-align: center;
+  background-image: url(/assets/home/mobile/image-header.jpg);
+  object-fit: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  height: 25rem;
+  background-size: 86%;
+  background-position-y: 90%;
+}
+
+.overline {
+  letter-spacing: 5px;
+  color: var(--grayDark);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.title {
+  text-transform: uppercase;
+  color: var(--grayLight);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.subtitle {
+  color: var(--grayMedium);
+  margin-bottom: 2rem;
+}

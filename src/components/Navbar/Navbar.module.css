@@ -1,0 +1,17 @@
+.header {
+  background-color: var(--blackMedium);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 3rem;
+  padding: 2rem;
+  border-bottom: 2px solid var(--blackLight);
+  color: var(--grayLight);
+}
+
+.name {
+  cursor: pointer;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}

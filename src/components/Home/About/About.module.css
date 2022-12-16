@@ -1,0 +1,25 @@
+.about {
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  margin-bottom: 4rem;
+}
+.title {
+  font-size: 1.7rem;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+.title span {
+  color: var(--brownMedium);
+}
+.description {
+  color: var(--grayDark);
+}
+.image {
+  position: relative;
+  object-fit: cover;
+  border-radius: 10px;
+  width: 100%;
+  margin-bottom: 2rem;
+}

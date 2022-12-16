@@ -1,0 +1,63 @@
+.footer {
+  background-color: var(--blackDark);
+  color: var(--grayLight);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: 500;
+}
+
+.name {
+  font-weight: 800;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  /* ! repeat from navbar ? */
+}
+
+.list {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 2px;
+}
+
+.link {
+  display: block;
+  margin-bottom: 1rem;
+}
+.link:hover,
+.link:focus-visible {
+  color: var(--brownMedium);
+}
+
+.description {
+  color: var(--grayDark);
+}
+
+.copyright {
+  color: var(--grayDark);
+  margin-top: 2rem;
+}
+
+.socials {
+  display: flex;
+  margin-top: 2rem;
+  gap: 1.2rem;
+}
+.socials a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.socials a:hover,
+.socials a:focus-visible {
+  fill: var(--brownMedium);
+}

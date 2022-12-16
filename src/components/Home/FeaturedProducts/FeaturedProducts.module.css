@@ -1,0 +1,52 @@
+.featured {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.card {
+  border-radius: 10px;
+  margin-top: 4rem;
+  padding: 2rem;
+  padding-top: 4rem;
+}
+
+.cardOrange {
+  background-color: var(--brownMedium);
+  color: rgb(239 239 239 / 83%);
+  background-image: url('/assets/home/desktop/pattern-circles.svg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-y: -27px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.cardGray {
+  background-color: var(--grayMedium2);
+  padding: 2rem;
+}
+.cardGray:nth-of-type(2) {
+  background-image: url('/assets/home/mobile/image-speaker-zx7.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 19rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.subtitle {
+  color: var(--grayMedium2);
+  margin-bottom: 1.7rem;
+}
