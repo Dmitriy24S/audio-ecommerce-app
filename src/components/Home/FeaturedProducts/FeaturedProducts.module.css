@@ -2,18 +2,24 @@
   display: flex;
   flex-direction: column;
   padding: 2rem;
+  max-width: 1180px;
+  margin: 0 auto;
+  /* TODO: refactor CSS - fix repeat */
 }
 
 .card {
   border-radius: 10px;
-  margin-top: 4rem;
+  /* margin-top: 4rem; */
+  margin-top: 2rem;
   padding: 2rem;
   padding-top: 4rem;
 }
 
 .cardOrange {
   background-color: var(--brownMedium);
-  color: rgb(239 239 239 / 83%);
+  /* color: rgb(239 239 239 / 83%); */
+  /* color: white; */
+  color: var(--grayLight);
   background-image: url('/assets/home/desktop/pattern-circles.svg');
   background-position: center;
   background-size: contain;
@@ -29,6 +35,7 @@
 .cardGray {
   background-color: var(--grayMedium2);
   padding: 2rem;
+  height: 14rem;
 }
 .cardGray:nth-of-type(2) {
   background-image: url('/assets/home/mobile/image-speaker-zx7.jpg');
@@ -41,12 +48,112 @@
 .title {
   font-size: 1.5rem;
   margin-top: 2rem;
-  margin-bottom: 1.5rem;
+  /* margin-bottom: 1.5rem; */
+  margin-bottom: 0.6rem;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
 .subtitle {
-  color: var(--grayMedium2);
+  /* color: var(--grayMedium2); */
+  color: rgba(255, 255, 255, 0.631);
   margin-bottom: 1.7rem;
+}
+
+.image {
+  border-radius: 10px;
+  /* margin-top: 4rem; */
+  margin-top: 2rem;
+  object-fit: cover;
+  border-radius: 10px;
+  width: 100%;
+  height: 14rem;
+}
+
+@media (min-width: 650px) {
+  .earphones {
+    /* display: flex; */
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+  .image {
+    /* margin-right: 1rem; */
+    height: 20rem;
+  }
+  .cardGray {
+    margin-left: 1rem;
+    height: 20rem;
+    display: grid;
+    place-content: center;
+    justify-content: start;
+    padding-left: 5rem;
+  }
+  .title {
+    margin-top: 0;
+  }
+  .cardGray:nth-of-type(2) {
+    background-image: url('/assets/home/tablet/image-speaker-zx7.jpg');
+  }
+  .cardOrange {
+    background-position-y: -93px;
+    background-position-y: -292px;
+    background-size: initial;
+  }
+  .cardOrange .title {
+    margin-top: 2rem;
+    font-size: 2rem;
+  }
+  .subtitle {
+    width: 55%;
+    margin: 0 auto;
+    margin-bottom: 1.7rem;
+    /* TODO: refactor CSS (repeats stack) */
+  }
+}
+
+@media (min-width: 950px) {
+  .cardOrange {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    min-height: 25rem;
+    background-position-y: -101px;
+    background-position-x: -81px;
+    background-size: 66%;
+    position: relative;
+    overflow: hidden;
+  }
+  .cardOrange .image {
+    position: absolute;
+    bottom: -0.5rem;
+    left: 7rem;
+    /* width: 50%; */
+    /* width: auto; */
+    width: 300px;
+    height: auto;
+    /* TODO: refactor CSS */
+  }
+  .cardOrange .title {
+    margin-top: 0;
+  }
+  .cardOrange .content {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    text-align: left;
+    width: 40%;
+    margin-left: auto;
+  }
+  .subtitle {
+    width: 80%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .cardGray:nth-of-type(2) {
+    margin-left: 0rem;
+    padding-left: 7rem;
+    background-image: url('/assets/home/desktop/image-speaker-zx7.jpg');
+  }
 }

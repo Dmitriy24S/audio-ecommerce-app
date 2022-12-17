@@ -12,8 +12,24 @@
   align-items: center;
   padding: 2rem;
   height: 25rem;
-  background-size: 86%;
-  background-position-y: 90%;
+  /* background-size: contain; */
+  background-size: 300px;
+  background-position-y: 108%;
+}
+.content {
+  max-width: 24rem;
+  margin: 0 auto;
+}
+.wrapper {
+  max-width: 1180px;
+  width: 100%;
+  margin: 0 auto;
+}
+@media (min-width: 650px) {
+  .hero {
+    background-image: url(/assets/home/tablet/image-header.jpg);
+    background-size: 477px;
+  }
 }
 
 .overline {
@@ -33,6 +49,28 @@
 }
 
 .subtitle {
-  color: var(--grayMedium);
+  /* color: var(--grayMedium); */
+  color: rgba(255, 255, 255, 0.631);
   margin-bottom: 2rem;
+}
+@media (min-width: 950px) {
+  .hero {
+    background-image: url(/assets/home/desktop/image-hero.jpg);
+    background-position: 68%;
+    height: 30rem;
+    background-position-y: 90%;
+    background-size: 1147px;
+  }
+  .content {
+    width: 25rem;
+    margin-right: auto;
+    text-align: left;
+    /* max-width: 1180px; */
+    /* margin: 0 auto; */
+    /* margin-left: 7rem; */
+    margin-left: 3rem;
+  }
+  .title {
+    font-size: 2.4rem;
+  }
 }

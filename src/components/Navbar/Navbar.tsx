@@ -6,7 +6,7 @@ import styles from './Navbar.module.css'
 const Navbar = () => {
   return (
     <header className={styles.header}>
-      <button aria-label='menu'>
+      <button aria-label='menu' className={styles.navBtn}>
         <Image
           src='/assets/shared/tablet/icon-hamburger.svg'
           alt='menu'
@@ -17,6 +17,28 @@ const Navbar = () => {
       <Link href='/' className={styles.name}>
         Audio Ecommerce
       </Link>
+      <ul className={styles.list}>
+        <li>
+          <Link href='/' className={styles.link}>
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link href='/' className={styles.link}>
+            Headphones
+          </Link>
+        </li>
+        <li>
+          <Link href='/' className={styles.link}>
+            Speakers
+          </Link>
+        </li>
+        <li>
+          <Link href='/' className={styles.link}>
+            Earphones
+          </Link>
+        </li>
+      </ul>
       <button aria-label='cart'>
         <Image
           src='/assets/shared/desktop/icon-cart.svg'

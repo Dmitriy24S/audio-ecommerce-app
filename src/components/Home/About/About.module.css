@@ -4,22 +4,54 @@
   position: relative;
   margin-bottom: 4rem;
 }
+@media (min-width: 950px) {
+  .about {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-evenly; /* closer together */
+    /* justify-content: space-around; */
+  }
+}
+
+@media (min-width: 950px) {
+  .content {
+    width: 40%;
+    text-align: left;
+    /* TODO: not align with footer sides text content? */
+  }
+}
+
 .title {
   font-size: 1.7rem;
   letter-spacing: 2.2px;
   text-transform: uppercase;
   margin-bottom: 1.5rem;
 }
+/* TODO: constant width variable? reusability? inside App.tsx vs inside CSS */
+@media (min-width: 650px) {
+  .title {
+    font-size: 2rem;
+  }
+}
 .title span {
   color: var(--brownMedium);
 }
+
 .description {
+  line-height: 2;
   color: var(--grayDark);
 }
+
 .image {
   position: relative;
   object-fit: cover;
   border-radius: 10px;
   width: 100%;
   margin-bottom: 2rem;
+}
+@media (min-width: 950px) {
+  .image {
+    width: 40%;
+  }
 }
