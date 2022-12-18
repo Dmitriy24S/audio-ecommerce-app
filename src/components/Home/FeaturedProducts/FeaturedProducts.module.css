@@ -86,8 +86,7 @@
     height: 20rem;
     display: grid;
     place-content: center;
-    justify-content: start;
-    padding-left: 5rem;
+    justify-content: flex-start;
   }
   .title {
     margin-top: 0;
@@ -140,7 +139,7 @@
   .cardOrange .content {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
     text-align: left;
     width: 40%;
     margin-left: auto;
@@ -151,6 +150,9 @@
     margin-right: 0;
   }
 
+  .cardGray {
+    padding-left: 5rem;
+  }
   .cardGray:nth-of-type(2) {
     margin-left: 0rem;
     padding-left: 7rem;

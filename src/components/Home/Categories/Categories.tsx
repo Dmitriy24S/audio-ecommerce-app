@@ -1,12 +1,12 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 import styles from './Categories.module.css'
-import CategoriesButton from './CategoriesButton'
 
 const Categories = () => {
   return (
     <section className={styles.categories}>
-      <div className={styles.card}>
+      <Link href='category/headphones' className={styles.card}>
         <Image
           src='/assets/shared/desktop/image-headphones.png'
           alt='headphones'
@@ -14,10 +14,20 @@ const Categories = () => {
           width={155}
           height={145}
         />
-        <h4 className={styles.title}>Headphones</h4>
-        <CategoriesButton />
-      </div>
-      <div className={styles.card}>
+        <div className={styles.content}>
+          <h4 className={styles.title}>Headphones</h4>
+          <div className={styles.button}>
+            Shop
+            <Image
+              src='/assets/shared/desktop/icon-arrow-right.svg'
+              alt='arrow right'
+              width={12}
+              height={16}
+            />
+          </div>
+        </div>
+      </Link>
+      <Link href='category/speakers' className={styles.card}>
         <Image
           src='/assets/shared/desktop/image-speakers.png'
           alt='speakers'
@@ -25,10 +35,20 @@ const Categories = () => {
           width={158}
           height={145}
         />
-        <h4 className={styles.title}>Speakers</h4>
-        <CategoriesButton />
-      </div>
-      <div className={styles.card}>
+        <div className={styles.content}>
+          <h4 className={styles.title}>Speakers</h4>
+          <div className={styles.button}>
+            Shop
+            <Image
+              src='/assets/shared/desktop/icon-arrow-right.svg'
+              alt='arrow right'
+              width={12}
+              height={16}
+            />
+          </div>
+        </div>
+      </Link>
+      <Link href='category/earphones' className={styles.card}>
         <Image
           src='/assets/shared/desktop/image-earphones.png'
           alt='earphones'
@@ -36,9 +56,19 @@ const Categories = () => {
           width={155}
           height={145}
         />
-        <h4 className={styles.title}>Earphones</h4>
-        <CategoriesButton />
-      </div>
+        <div className={styles.content}>
+          <h4 className={styles.title}>Earphones</h4>
+          <div className={styles.button}>
+            Shop
+            <Image
+              src='/assets/shared/desktop/icon-arrow-right.svg'
+              alt='arrow right'
+              width={12}
+              height={16}
+            />
+          </div>
+        </div>
+      </Link>
     </section>
   )
 }

@@ -1,5 +1,5 @@
 .footer {
-  background-color: var(--blackDark);
+  background-color: var(--blackMedium);
   color: var(--grayLight);
   padding: 2rem;
   display: flex;
@@ -11,14 +11,17 @@
 }
 
 .content {
-  max-width: 1180px;
+  /* max-width: 1180px; */
+  /* max-width: 1081px; */
+  max-width: 1128px;
   margin: 0 auto;
+  width: 100%;
 }
-@media (min-width: 650px) {
+/* @media (min-width: 650px) {
   .content {
     width: 86%;
   }
-}
+} */
 
 @media (min-width: 950px) {
   .TopContainer {
@@ -116,6 +119,7 @@
 
 .socials {
   display: flex;
+  align-items: center;
   margin-top: 2rem;
   gap: 1.2rem;
 }
@@ -127,4 +131,5 @@
 .socials a:hover,
 .socials a:focus-visible {
   fill: var(--brownMedium);
+  color: var(--brownMedium);
 }

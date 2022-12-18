@@ -3,13 +3,17 @@
   text-align: center;
   position: relative;
   margin-bottom: 4rem;
+  max-width: 1180px;
+  margin: 0 auto;
+  justify-content: space-between;
 }
 @media (min-width: 950px) {
   .about {
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
-    justify-content: space-evenly; /* closer together */
+    /* justify-content: space-evenly; */
+    /* closer together */
     /* justify-content: space-around; */
   }
 }
@@ -52,6 +56,8 @@
 }
 @media (min-width: 950px) {
   .image {
-    width: 40%;
+    /* width: 40%; */
+    width: 48%;
+    height: 100%;
   }
 }

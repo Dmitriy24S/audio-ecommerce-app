@@ -2,10 +2,11 @@
   color: var(--white);
   background-color: var(--brownMedium);
   padding: 1rem 1.5rem;
-  transition: background-color 250ms ease;
+  /* transition: background-color 250ms ease; */
   font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
+  outline-offset: 4px;
 }
 .button:hover,
 .button:focus-visible {
@@ -30,6 +31,8 @@
 }
 .secondaryGray:hover,
 .secondaryGray:focus-visible {
-  background-color: var(--grayMedium2);
-  color: var(--grayDark);
+  /* background-color: var(--grayMedium2); */
+  /* color: var(--grayDark); */
+  background-color: var(--black);
+  color: var(--grayMedium2);
 }
