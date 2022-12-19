@@ -52,6 +52,7 @@
   overflow-y: auto;
 }
 .backdrop {
+  display: block;
   position: fixed;
   z-index: 1;
   top: 5rem;
@@ -62,6 +63,9 @@
 }
 @media (min-width: 950px) {
   .navMenu {
+    display: none;
+  }
+  .backdrop {
     display: none;
   }
   .list {

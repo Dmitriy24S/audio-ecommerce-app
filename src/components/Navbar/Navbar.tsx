@@ -5,7 +5,7 @@ import Categories from '../Home/Categories/Categories'
 import styles from './Navbar.module.css'
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(true)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev)
