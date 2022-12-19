@@ -28,12 +28,18 @@ button {
   background-color: unset;
   padding: 0;
   cursor: pointer;
+  outline-offset: 4px;
 }
 
 ul {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+main {
+  margin-top: 5rem;
+  /* TODO: Refactor CSS? */
 }
 
 @media (prefers-color-scheme: dark) {
