@@ -94,3 +94,49 @@
 .cartBtn:hover {
   color: var(--brownMedium);
 }
+
+/* cart */
+.cart {
+  background-color: var(--white);
+  border-radius: 10px;
+  /* TODO: refactor CSS */
+  padding: 2rem;
+  color: initial;
+  position: absolute;
+  right: 5px;
+  top: 100%;
+  min-width: 300px;
+  box-shadow: 0 0 10px 3px rgb(0 0 0 / 13%);
+}
+.cartHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.title {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+.clearCartBtn {
+  color: var(--grayDark);
+  text-decoration: underline;
+}
+.clearCartBtn:focus-visible,
+.clearCartBtn:hover {
+  color: var(--brownMedium);
+}
+.cartList {
+  margin: 3rem 0;
+}
+.cartFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.totalTitle {
+  color: var(--grayDark);
+}
+.totalPrice {
+  font-weight: 700;
+  font-size: 1.2rem;
+}

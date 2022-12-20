@@ -6,19 +6,25 @@ import styles from './Navbar.module.css'
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isCartOpen, setIsCartOpen] = useState(true)
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev)
   }
 
+  const toggleCart = () => {
+    setIsCartOpen((prev) => !prev)
+  }
+
+  // disable body scroll when cart or nav menu is open
   useEffect(() => {
-    if (isMenuOpen) {
+    if (isMenuOpen || isCartOpen) {
       document.body.style.overflow = 'hidden'
     }
-    if (!isMenuOpen) {
+    if (!isMenuOpen || !isCartOpen) {
       document.body.style.overflow = 'auto'
     }
-  }, [isMenuOpen])
+  }, [isMenuOpen, isCartOpen])
 
   return (
     <header className={styles.header}>
@@ -80,7 +86,22 @@ const Navbar = () => {
           </li>
         </ul>
         {/* Cart */}
-        <button aria-label='cart' className={styles.cartBtn}>
+        {isCartOpen && (
+          <div className={styles.cart}>
+            <div className={styles.cartHeader}>
+              <div className={styles.title}>CART(0)</div>
+              <button className={styles.clearCartBtn}>Clear all</button>
+            </div>
+            <div className={styles.cartList}></div>
+            <div className={styles.cartFooter}>
+              <div className={styles.totalTitle}>TOTAL</div>
+              <div className={styles.totalPrice}>$0</div>
+            </div>
+          </div>
+        )}
+
+        {/* Cart Btn */}
+        <button aria-label='cart' className={styles.cartBtn} onClick={toggleCart}>
           {/* <Image
             src='/assets/shared/desktop/icon-cart.svg'
             alt='cart'
