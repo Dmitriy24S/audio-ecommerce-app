@@ -13,7 +13,8 @@ body {
   /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, */
   /* Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
   font-family: 'Manrope', sans-serif;
-  background-color: var(--grayLight);
+  /* background-color: var(--grayLight); */
+  background-color: var(--blackMedium);
   line-height: 1.7;
   font-weight: 500;
 }
@@ -40,6 +41,8 @@ ul {
 main {
   margin-top: 5rem;
   /* TODO: Refactor CSS? */
+  /* background-color: var(--grayLight); */
+  background-color: var(--grayWhite);
 }
 
 @media (prefers-color-scheme: dark) {

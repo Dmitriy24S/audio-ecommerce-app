@@ -39,7 +39,7 @@ const FeaturedProducts = () => {
             alt='speakers'
             // className={styles.image}
             width={158}
-            height={185}
+            height={200}
           />
         )}
         {screenSize === 'LARGE' && (
