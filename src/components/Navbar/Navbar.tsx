@@ -6,7 +6,7 @@ import styles from './Navbar.module.css'
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [isCartOpen, setIsCartOpen] = useState(true)
+  const [isCartOpen, setIsCartOpen] = useState(false)
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev)
@@ -18,13 +18,18 @@ const Navbar = () => {
 
   // disable body scroll when cart or nav menu is open
   useEffect(() => {
-    if (isMenuOpen || isCartOpen) {
-      document.body.style.overflow = 'hidden'
+    if (isMenuOpen) {
+      // document.body.style.overflow = 'hidden'
+      document.body.style.position = 'fixed'
+      document.body.style.overflowY = 'scroll'
     }
-    if (!isMenuOpen || !isCartOpen) {
-      document.body.style.overflow = 'auto'
+    // if (!isMenuOpen || !isCartOpen) {
+    if (!isMenuOpen) {
+      // document.body.style.overflow = 'auto'
+      document.body.style.position = 'relative'
+      document.body.style.overflowY = 'auto'
     }
-  }, [isMenuOpen, isCartOpen])
+  }, [isMenuOpen])
 
   return (
     <header className={styles.header}>
