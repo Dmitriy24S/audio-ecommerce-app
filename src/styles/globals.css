@@ -19,6 +19,28 @@ body {
   font-weight: 500;
 }
 
+body {
+  /* margin-top: 5.8rem; */
+  /* min-height: calc(100vh - 5.8rem); */
+  /* TODO: Refactor CSS? */
+}
+
+main {
+  /* margin-top: 5rem; */
+  margin-top: 5.8rem;
+  /* TODO: Refactor CSS? */
+  /* background-color: var(--grayLight); */
+  background-color: var(--grayWhite);
+}
+
+#__next {
+  /* min-height: 100vh; */
+  min-height: calc(100vh - 5.8rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
 a,
 button {
   color: inherit;
@@ -36,13 +58,6 @@ ul {
   list-style: none;
   margin: 0;
   padding: 0;
-}
-
-main {
-  margin-top: 5rem;
-  /* TODO: Refactor CSS? */
-  /* background-color: var(--grayLight); */
-  background-color: var(--grayWhite);
 }
 
 @media (prefers-color-scheme: dark) {
