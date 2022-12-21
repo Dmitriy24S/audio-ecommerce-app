@@ -34,8 +34,8 @@ main {
 }
 
 #__next {
-  /* min-height: 100vh; */
-  min-height: calc(100vh - 5.8rem);
+  min-height: 100vh;
+  /* min-height: calc(100vh - 5.8rem); */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
