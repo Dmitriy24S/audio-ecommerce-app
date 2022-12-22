@@ -6,7 +6,7 @@ import styles from './Categories.module.css'
 const Categories = () => {
   return (
     <section className={styles.categories}>
-      <Link href='category/headphones' className={styles.card}>
+      <Link href='headphones' className={styles.card}>
         <Image
           src='/assets/shared/desktop/image-headphones.png'
           alt='headphones'
@@ -27,7 +27,7 @@ const Categories = () => {
           </div>
         </div>
       </Link>
-      <Link href='category/speakers' className={styles.card}>
+      <Link href='speakers' className={styles.card}>
         <Image
           src='/assets/shared/desktop/image-speakers.png'
           alt='speakers'
@@ -48,7 +48,7 @@ const Categories = () => {
           </div>
         </div>
       </Link>
-      <Link href='category/earphones' className={styles.card}>
+      <Link href='earphones' className={styles.card}>
         <Image
           src='/assets/shared/desktop/image-earphones.png'
           alt='earphones'
