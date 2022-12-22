@@ -1,4 +1,5 @@
 .button {
+  display: inline-block;
   color: var(--white);
   background-color: var(--brownMedium);
   padding: 1rem 1.5rem;

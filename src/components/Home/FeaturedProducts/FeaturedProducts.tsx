@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import shared from '../../../styles/Button.module.css'
 import styles from './FeaturedProducts.module.css'
@@ -57,17 +58,23 @@ const FeaturedProducts = () => {
             Upgrade to premium speakers that are phenomenally built to deliver truly
             remarkable sound.
           </p>
-          <button className={[shared.button, shared.secondaryBlack].join(' ')}>
+          <Link
+            href='/speakers/zx9'
+            className={[shared.button, shared.secondaryBlack].join(' ')}
+          >
             See product
-          </button>
+          </Link>
         </div>
       </div>
       {/* speaker */}
       <div className={[styles.card, styles.cardGray].join(' ')}>
         <h4 className={styles.title}>ZX7 speaker</h4>
-        <button className={[shared.button, shared.secondaryGray].join(' ')}>
+        <Link
+          href='/speakers/zx7'
+          className={[shared.button, shared.secondaryGray].join(' ')}
+        >
           See product
-        </button>
+        </Link>
       </div>
       {/* earphones */}
       {/* <div className={styles.card}> */}
@@ -82,9 +89,12 @@ const FeaturedProducts = () => {
         {/* </div> */}
         <div className={[styles.card, styles.cardGray].join(' ')}>
           <h4 className={styles.title}>YX1 earphones</h4>
-          <button className={[shared.button, shared.secondaryGray].join(' ')}>
+          <Link
+            href='/earphones/yx1'
+            className={[shared.button, shared.secondaryGray].join(' ')}
+          >
             See product
-          </button>
+          </Link>
         </div>
       </div>
     </section>
