@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Categories from '../Home/Categories/Categories'
 import styles from './Navbar.module.css'
 
@@ -16,6 +16,7 @@ const Navbar = () => {
   }
 
   const toggleCart = () => {
+    console.log('toggle cart menu')
     setIsCartOpen((prev) => !prev)
   }
 
@@ -38,6 +39,26 @@ const Navbar = () => {
   useEffect(() => {
     setIsMenuOpen(false)
   }, [router])
+
+  //  Handle click outside - close cart menu
+  const cartMenuRef = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      // if click element outside dropdown menu - close dropdown menu
+      if (!cartMenuRef.current?.contains(event.target as Element)) {
+        setIsCartOpen(false)
+        console.log('click outside cart -> close cart')
+      }
+    }
+    if (isCartOpen) {
+      document.addEventListener('click', handleClickOutside)
+    } else {
+      document.removeEventListener('click', handleClickOutside)
+    }
+    return () => {
+      document.removeEventListener('click', handleClickOutside)
+    }
+  }, [isCartOpen])
 
   return (
     <header className={styles.header}>
@@ -98,37 +119,40 @@ const Navbar = () => {
             </Link>
           </li>
         </ul>
-        {/* Cart */}
-        {isCartOpen && (
-          <div className={styles.cart}>
-            <div className={styles.cartHeader}>
-              <div className={styles.title}>CART(0)</div>
-              <button className={styles.clearCartBtn}>Clear all</button>
-            </div>
-            <div className={styles.cartList}></div>
-            <div className={styles.cartFooter}>
-              <div className={styles.totalTitle}>TOTAL</div>
-              <div className={styles.totalPrice}>$0</div>
-            </div>
-          </div>
-        )}
 
-        {/* Cart Btn */}
-        <button aria-label='cart' className={styles.cartBtn} onClick={toggleCart}>
-          {/* <Image
-            src='/assets/shared/desktop/icon-cart.svg'
-            alt='cart'
-            width={23}
-            height={20}
-          /> */}
-          <svg width='23' height='20' xmlns='http://www.w3.org/2000/svg'>
-            <path
-              d='M8.625 15.833c1.132 0 2.054.935 2.054 2.084 0 1.148-.922 2.083-2.054 2.083-1.132 0-2.054-.935-2.054-2.083 0-1.15.922-2.084 2.054-2.084zm9.857 0c1.132 0 2.054.935 2.054 2.084 0 1.148-.922 2.083-2.054 2.083-1.132 0-2.053-.935-2.053-2.083 0-1.15.92-2.084 2.053-2.084zm-9.857 1.39a.69.69 0 00-.685.694.69.69 0 00.685.694.69.69 0 00.685-.694.69.69 0 00-.685-.695zm9.857 0a.69.69 0 00-.684.694.69.69 0 00.684.694.69.69 0 00.685-.694.69.69 0 00-.685-.695zM4.717 0c.316 0 .59.215.658.517l.481 2.122h16.47a.68.68 0 01.538.262c.127.166.168.38.11.579l-2.695 9.236a.672.672 0 01-.648.478H7.41a.667.667 0 00-.673.66c0 .364.303.66.674.66h12.219c.372 0 .674.295.674.66 0 .364-.302.66-.674.66H7.412c-1.115 0-2.021-.889-2.021-1.98 0-.812.502-1.511 1.218-1.816L4.176 1.32H.674A.667.667 0 010 .66C0 .296.302 0 .674 0zm16.716 3.958H6.156l1.797 7.917h11.17l2.31-7.917z'
-              fill='currentColor'
-              fillRule='nonzero'
-            />
-          </svg>
-        </button>
+        {/* Cart btn container */}
+        <div className={styles.cartContainer} ref={cartMenuRef}>
+          {/* Cart Btn */}
+          <button aria-label='cart' className={styles.cartBtn} onClick={toggleCart}>
+            {/* <Image
+          src='/assets/shared/desktop/icon-cart.svg'
+          alt='cart'
+          width={23}
+          height={20}
+            /> */}
+            <svg width='23' height='20' xmlns='http://www.w3.org/2000/svg'>
+              <path
+                d='M8.625 15.833c1.132 0 2.054.935 2.054 2.084 0 1.148-.922 2.083-2.054 2.083-1.132 0-2.054-.935-2.054-2.083 0-1.15.922-2.084 2.054-2.084zm9.857 0c1.132 0 2.054.935 2.054 2.084 0 1.148-.922 2.083-2.054 2.083-1.132 0-2.053-.935-2.053-2.083 0-1.15.92-2.084 2.053-2.084zm-9.857 1.39a.69.69 0 00-.685.694.69.69 0 00.685.694.69.69 0 00.685-.694.69.69 0 00-.685-.695zm9.857 0a.69.69 0 00-.684.694.69.69 0 00.684.694.69.69 0 00.685-.694.69.69 0 00-.685-.695zM4.717 0c.316 0 .59.215.658.517l.481 2.122h16.47a.68.68 0 01.538.262c.127.166.168.38.11.579l-2.695 9.236a.672.672 0 01-.648.478H7.41a.667.667 0 00-.673.66c0 .364.303.66.674.66h12.219c.372 0 .674.295.674.66 0 .364-.302.66-.674.66H7.412c-1.115 0-2.021-.889-2.021-1.98 0-.812.502-1.511 1.218-1.816L4.176 1.32H.674A.667.667 0 010 .66C0 .296.302 0 .674 0zm16.716 3.958H6.156l1.797 7.917h11.17l2.31-7.917z'
+                fill='currentColor'
+                fillRule='nonzero'
+              />
+            </svg>
+          </button>
+          {/* Cart Menu */}
+          {isCartOpen && (
+            <div className={styles.cart}>
+              <div className={styles.cartHeader}>
+                <div className={styles.title}>CART(0)</div>
+                <button className={styles.clearCartBtn}>Clear all</button>
+              </div>
+              <div className={styles.cartList}></div>
+              <div className={styles.cartFooter}>
+                <div className={styles.totalTitle}>TOTAL</div>
+                <div className={styles.totalPrice}>$0</div>
+              </div>
+            </div>
+          )}
+        </div>
       </div>
     </header>
   )
