@@ -96,6 +96,9 @@
 }
 
 /* cart */
+.cartContainer {
+  position: relative;
+}
 .cart {
   background-color: var(--white);
   border-radius: 10px;
@@ -103,8 +106,8 @@
   padding: 2rem;
   color: initial;
   position: absolute;
-  right: 5px;
-  top: 100%;
+  right: 0;
+  top: 194%;
   min-width: 300px;
   box-shadow: 0 0 10px 3px rgb(0 0 0 / 13%);
 }
