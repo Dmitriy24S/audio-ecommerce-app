@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import { links } from '../../../data/links'
+import { links } from '../../data/links'
 import styles from './Categories.module.css'
 
 const Categories = () => {

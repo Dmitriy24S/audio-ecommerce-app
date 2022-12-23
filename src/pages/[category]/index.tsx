@@ -1,13 +1,10 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
-import About from '../../components/Home/About/About'
-import Categories from '../../components/Home/Categories/Categories'
+import About from '../../components/About/About'
+import Categories from '../../components/Categories/Categories'
+import CategoryProducts from '../../components/CategoryProducts/CategoryProducts'
 import { EARPHONES, HEADPHONES, SPEAKERS } from '../../data/CategoryData'
-import shared from '../../styles/Button.module.css'
-import styles from './Category.module.css'
 
 // const HEADPHONES: {
 // product: string;
@@ -20,11 +17,12 @@ import styles from './Category.module.css'
 // link: string;
 // }[]
 
-const Category = () => {
+const CategoryPage = () => {
   const router = useRouter()
   console.log('router', router) // router {pathname: '/[category]', route: '/[category]', query: {…}, asPath: '/headphones', components: {…}, …} // query: category : "headphones"
 
   // const category = router.query.category
+  // const category: string | string[] | undefined // TODO: type limit?
   const {
     query: { category },
   } = useRouter()
@@ -63,36 +61,11 @@ const Category = () => {
       <Head>
         <title>{`Audio Shop - ${toUppercase(category)}`}</title>
       </Head>
-      <section className={styles.category}>
-        {/* <div className={styles.hero}>Headphones</div> */}
-        <div className={styles.hero}>{category}</div>
-        <div className={styles.products}>
-          {/* {HEADPHONES.map((headphone) => ( */}
-          {data.map((item) => (
-            <div className={styles.product} key={item.name}>
-              <Image
-                src={item.src}
-                alt={item.name}
-                width={200}
-                height={200}
-                className={styles.image}
-              />
-              <div className={styles.content}>
-                {item.feature && <div className={styles.feature}>{item.feature}</div>}
-                <div className={styles.name}>{item.name}</div>
-                <div className={styles.detail}>{item.detail}</div>
-                <Link href={`${category}${item.link}`} className={shared.button}>
-                  See product
-                </Link>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+      <CategoryProducts data={data} category={category} />
       <Categories />
       <About />
     </>
   )
 }
 
-export default Category
+export default CategoryPage

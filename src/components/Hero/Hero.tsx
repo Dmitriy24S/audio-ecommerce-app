@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
-import shared from '../../../styles/Button.module.css'
+import shared from '../../styles/Button.module.css'
 import styles from './Hero.module.css'
 
 const Hero = () => {

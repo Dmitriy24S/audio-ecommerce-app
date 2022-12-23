@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
-import shared from '../../../styles/Button.module.css'
+import shared from '../../styles/Button.module.css'
 import styles from './FeaturedProducts.module.css'
 
 const FeaturedProducts = () => {
