@@ -1,0 +1,36 @@
+.gallery {
+  display: grid;
+  grid-gap: 1.25rem;
+  grid-template-columns: 1fr;
+  margin-top: 3rem;
+  justify-items: center;
+  /* TODO: refactor CSS - combine containers? */
+  padding: 2rem;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.gallery img {
+  /* max-width: initial; */
+  width: 100%;
+  max-width: 375px;
+  max-height: 390px;
+  height: 100%;
+}
+
+@media (min-width: 650px) {
+  .gallery {
+    display: grid;
+    grid-template-areas:
+      'a c'
+      'b c';
+    grid-template-columns: 40% 1fr;
+  }
+  .gallery img:nth-child(3) {
+    grid-area: c;
+  }
+  .gallery img {
+    max-width: none;
+    max-height: none;
+  }
+}

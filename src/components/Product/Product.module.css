@@ -1,0 +1,129 @@
+.container {
+  padding: 2rem;
+  max-width: 1180px;
+  margin: 0 auto;
+  /* TODO: refactor CSS - combine containers? */
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 7rem;
+  max-width: 1180px;
+  margin: 0 auto;
+  /* margin-bottom: 7rem; */
+}
+
+.image {
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.detailsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.feature {
+  color: var(--brownMediumLight);
+  letter-spacing: 5px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 1.7rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.detail {
+  color: var(--grayDark);
+  text-align: left;
+  max-width: 40ch;
+  margin-bottom: 1rem;
+}
+
+.price {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  align-self: flex-start;
+}
+
+/* Cart actions (amount/add to cart) */
+
+.cartActionsContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.amountContainer {
+  display: flex;
+  align-items: center;
+}
+
+.amountContainer button {
+  background-color: var(--grayLight);
+  height: 2.4rem;
+  width: 2.4rem;
+}
+
+.amount {
+  width: 2rem;
+  text-align: center;
+}
+
+.addToCartBtn {
+  padding: 0.8rem 0.8rem;
+  font-size: 0.9rem;
+}
+
+@media (min-width: 650px) {
+  .product {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .detailsContainer {
+    margin-left: 2rem;
+    align-items: flex-start;
+  }
+  .name {
+    text-align: left;
+  }
+  .image {
+    width: 45%;
+    height: 100%;
+    /* max-height: 400px; */
+    /* max-width: 400px; */
+    /* width: 85%; */
+    /* height: 100%; */
+    /* max-height: 477px; */
+    /* max-width: 258px; */
+    max-width: 300px;
+  }
+}
+
+@media (min-width: 950px) {
+  .detailsContainer {
+    margin-left: 8rem;
+  }
+  .image {
+    max-width: 477px;
+  }
+  .addToCartBtn {
+    padding: 1rem 1.5rem;
+    /* TODO: refactor CSS */
+    font-size: 1rem;
+  }
+}
