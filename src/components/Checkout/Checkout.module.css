@@ -1,0 +1,9 @@
+.checkoutForm {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  max-width: 1180px;
+  margin: 0 auto;
+  /* TODO: refactor CSS - fix repeat */
+  margin-bottom: 10rem;
+}
