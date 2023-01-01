@@ -23,7 +23,7 @@ const CheckoutForm = ({ register, errors }: IProps) => {
   // }
 
   return (
-    <>
+    <div className={styles.fieldsContainer}>
       <fieldset className={styles.field}>
         <legend> Billing Details</legend>
         <div className={styles.inputContainer}>
@@ -181,7 +181,7 @@ const CheckoutForm = ({ register, errors }: IProps) => {
           </p>
         </div>
       </fieldset>
-    </>
+    </div>
   )
 }
 

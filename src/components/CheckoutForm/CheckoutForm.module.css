@@ -1,5 +1,13 @@
 /* TODO: refactor names */
 
+.fieldsContainer {
+  background: var(--white);
+  padding: 1rem;
+  padding-top: 1.5rem;
+  margin-bottom: 3rem;
+  border-radius: 0.5rem;
+}
+
 .field {
   border: none;
   padding: 0;
