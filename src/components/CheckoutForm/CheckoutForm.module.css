@@ -1,0 +1,100 @@
+/* TODO: refactor names */
+
+.field {
+  border: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+.field legend {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 0;
+  margin-bottom: 0.7rem;
+  color: var(--brownMedium);
+}
+.field label {
+  font-weight: 600;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+.inputContainer input {
+  border-radius: 5px;
+  padding: 0.7rem;
+  border: 1px solid rgb(213, 213, 213);
+  background-color: transparent;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+}
+.inputContainer input::placeholder {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.inputContainer input:focus-visible,
+.inputContainer input:target,
+.radioInputContainer label:focus-visible {
+  outline-color: var(--brownMediumLight);
+}
+
+.radioInputContainer {
+  margin-bottom: 0.5rem;
+}
+.radioInputContainer input {
+  display: none;
+}
+.radioInputContainer input:checked ~ .radioInput::after {
+  content: '';
+  position: absolute;
+  background-color: var(--brownMedium);
+  height: 60%;
+  width: 60%;
+  /* height: 80%;
+  width: 80%; */
+  border-radius: 9999px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.radioInput {
+  width: 30px;
+  height: 30px;
+  /* width: 40px;
+  height: 40px; */
+  border-radius: 9999px;
+  border: 1px solid var(--grayMedium);
+  position: relative;
+  overflow: hidden;
+  margin-right: 0.7rem;
+}
+.radioInputContainer label {
+  cursor: pointer;
+  /* TODO: refactor / repeat css? */
+  border-radius: 5px;
+  padding: 0.7rem;
+  border: 1px solid rgb(213, 213, 213);
+  display: block;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+input.inputError {
+  /* outline-color: rgb(205, 8, 8); */
+  /* outline: 2px solid; */
+  /* TODO: refactor names ? */
+  border-color: rgb(205, 8, 8);
+}
+.inputErrorMsg {
+  color: rgb(205, 8, 8);
+  font-size: 0.9rem;
+}

@@ -42,8 +42,10 @@ const Checkout = () => {
     formState: { errors },
   } = useForm<IFormInputs>({
     resolver: yupResolver(schema),
+    mode: 'onBlur',
     defaultValues: {
-      payment: '', // prevent null from radio select?
+      // payment: '', // prevent null from radio select?
+      payment: 'e-Money', // default selected?
     },
   })
 
@@ -56,7 +58,7 @@ const Checkout = () => {
 
   return (
     <form className={styles.checkoutForm} onSubmit={handleSubmit(onSubmit)}>
-      <h2>Checkout</h2>
+      <h2 className={styles.title}>Checkout</h2>
       <CheckoutForm register={register} errors={errors} />
       <CheckoutSummary />
     </form>
