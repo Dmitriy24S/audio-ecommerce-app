@@ -1,5 +1,7 @@
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { addToCart } from '../../store/CartSlice/CartSlice'
 import shared from '../../styles/Button.module.css'
 import styles from './Product.module.css'
 
@@ -30,10 +32,31 @@ interface IProps {
 }
 
 const Product = ({ product }: IProps) => {
-  const [amount, setAmount] = useState(0)
+  const [amount, setAmount] = useState(1)
   const increaseAmount = () => setAmount((prev) => prev + 1)
-  const decreaseAmount = () => amount > 0 && setAmount((prev) => prev - 1)
+  const decreaseAmount = () => amount > 1 && setAmount((prev) => prev - 1)
+  const dispatch = useDispatch()
 
+  // reset product amount to 1 when click on another product
+  useEffect(() => {
+    setAmount(1)
+    console.log('render Product Page')
+  }, [product])
+
+  const handleAddToCart = () => {
+    dispatch(
+      addToCart({
+        id: product.id,
+        shortName: product.short,
+        cartImage: product.cartImg,
+        price: product.price,
+        qty: amount,
+      })
+    )
+    setAmount(1) // reset back to 1?
+  }
+
+  // Screen Resize - Image change
   const [screenSize, setScreenSize] = useState('SMALL')
   // TODO: SMALL / LARGE -> make const. var.
   const handleResizeImage = () => {
@@ -99,7 +122,10 @@ const Product = ({ product }: IProps) => {
               <div className={styles.amount}>{amount}</div>
               <button onClick={increaseAmount}>+</button>
             </div>
-            <button className={[shared.button, styles.addToCartBtn].join(' ')}>
+            <button
+              className={[shared.button, styles.addToCartBtn].join(' ')}
+              onClick={handleAddToCart}
+            >
               Add to cart
             </button>
           </div>
