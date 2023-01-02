@@ -14,3 +14,10 @@
   /* TODO: refactor CSS - fix repeat ? */
   margin-bottom: 1.5rem;
 }
+
+@media (min-width: 980px) {
+  .checkoutContainer {
+    display: flex;
+    align-items: flex-start;
+  }
+}

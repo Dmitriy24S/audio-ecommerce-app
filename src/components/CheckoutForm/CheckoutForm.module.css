@@ -44,6 +44,7 @@
 .inputContainer input::placeholder {
   font-size: 1rem;
   font-weight: 400;
+  color: var(--grayMedium);
 }
 
 .inputContainer input:focus-visible,
@@ -105,4 +106,40 @@ input.inputError {
 .inputErrorMsg {
   color: rgb(205, 8, 8);
   font-size: 0.9rem;
+}
+
+@media (min-width: 634px) {
+  .inputContainer {
+    margin-bottom: 0;
+  }
+  .billing {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+  }
+  .shipping {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-areas:
+      'a a'
+      'b c'
+      'd .';
+    grid-template-columns: 1fr 1fr;
+  }
+  /* .shipping:nth-child(1) {
+    grid-area: 'a';
+  }
+  .shipping:first-child {
+    grid-area: 'a';
+  } */
+  .shipping .inputContainer:nth-of-type(1) {
+    grid-area: a;
+  }
+}
+
+@media (min-width: 980px) {
+  .fieldsContainer {
+    margin-right: 2rem;
+    flex: 1;
+  }
 }

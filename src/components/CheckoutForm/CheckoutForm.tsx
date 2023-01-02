@@ -26,99 +26,103 @@ const CheckoutForm = ({ register, errors }: IProps) => {
     <div className={styles.fieldsContainer}>
       <fieldset className={styles.field}>
         <legend> Billing Details</legend>
-        <div className={styles.inputContainer}>
-          <label htmlFor='name'>Name</label>
-          <input
-            type='text'
-            id='name'
-            {...register('name')}
-            placeholder='John Doe'
-            className={errors.name ? styles.inputError : ''}
-          />
-          <p role='alert' className={styles.inputErrorMsg}>
-            {errors.name?.message}
-          </p>
-        </div>
-        <div className={styles.inputContainer}>
-          <label htmlFor='email'>Email Address</label>
-          <input
-            type='text'
-            id='email'
-            {...register('email')}
-            placeholder='john@doe.com'
-            className={errors.email ? styles.inputError : ''}
-          />
-          <p role='alert' className={styles.inputErrorMsg}>
-            {errors.email?.message}
-          </p>
-        </div>
-        <div className={styles.inputContainer}>
-          <label htmlFor='phone'>Phone Number</label>
-          <input
-            type='number'
-            id='phone'
-            {...register('phone')}
-            placeholder='+1 202-555-0136'
-            className={errors.phone ? styles.inputError : ''}
-          />
-          <p role='alert' className={styles.inputErrorMsg}>
-            {errors.phone?.message}
-          </p>
+        <div className={styles.billing}>
+          <div className={styles.inputContainer}>
+            <label htmlFor='name'>Name</label>
+            <input
+              type='text'
+              id='name'
+              {...register('name')}
+              placeholder='John Doe'
+              className={errors.name ? styles.inputError : ''}
+            />
+            <p role='alert' className={styles.inputErrorMsg}>
+              {errors.name?.message}
+            </p>
+          </div>
+          <div className={styles.inputContainer}>
+            <label htmlFor='email'>Email Address</label>
+            <input
+              type='text'
+              id='email'
+              {...register('email')}
+              placeholder='john@doe.com'
+              className={errors.email ? styles.inputError : ''}
+            />
+            <p role='alert' className={styles.inputErrorMsg}>
+              {errors.email?.message}
+            </p>
+          </div>
+          <div className={styles.inputContainer}>
+            <label htmlFor='phone'>Phone Number</label>
+            <input
+              type='number'
+              id='phone'
+              {...register('phone')}
+              placeholder='+1 202-555-0136'
+              className={errors.phone ? styles.inputError : ''}
+            />
+            <p role='alert' className={styles.inputErrorMsg}>
+              {errors.phone?.message}
+            </p>
+          </div>
         </div>
       </fieldset>
       <fieldset className={styles.field}>
         <legend>Shipping Info</legend>
-        <div className={styles.inputContainer}>
-          <label htmlFor='address'>Your Address</label>
-          <input
-            type='text'
-            id='address'
-            {...register('address')}
-            placeholder='1137 Williams Avenue'
-            className={errors.address ? styles.inputError : ''}
-          />
-          <p role='alert' className={styles.inputErrorMsg}>
-            {errors.address?.message}
-          </p>
-        </div>
-        <div className={styles.inputContainer}>
-          <label htmlFor='zip'>Zip Code</label>
-          <input
-            type='text'
-            id='zip'
-            {...register('zip')}
-            placeholder='10001'
-            className={errors.zip ? styles.inputError : ''}
-          />
-          <p role='alert' className={styles.inputErrorMsg}>
-            {errors.zip?.message}
-          </p>
-        </div>
-        <div className={styles.inputContainer}>
-          <label htmlFor='city'>City</label>
-          <input
-            type='text'
-            id='city'
-            {...register('city')}
-            placeholder='New York'
-            className={errors.city ? styles.inputError : ''}
-          />
-          <p role='alert' className={styles.inputErrorMsg}>
-            {errors.city?.message}
-          </p>
-        </div>
-        <div className={styles.inputContainer}>
-          <label htmlFor='country'>Country</label>
-          <input
-            type='text'
-            id='country'
-            {...register('country')}
-            placeholder='United States'
-            className={errors.country ? styles.inputError : ''}
-          />
-          <p role='alert' className={styles.inputErrorMsg}>
-            {errors.country?.message}
-          </p>
+        <div className={styles.shipping}>
+          <div className={styles.inputContainer}>
+            <label htmlFor='address'>Your Address</label>
+            <input
+              type='text'
+              id='address'
+              {...register('address')}
+              placeholder='1137 Williams Avenue'
+              className={errors.address ? styles.inputError : ''}
+            />
+            <p role='alert' className={styles.inputErrorMsg}>
+              {errors.address?.message}
+            </p>
+          </div>
+          <div className={styles.inputContainer}>
+            <label htmlFor='zip'>Zip Code</label>
+            <input
+              type='text'
+              id='zip'
+              {...register('zip')}
+              placeholder='10001'
+              className={errors.zip ? styles.inputError : ''}
+            />
+            <p role='alert' className={styles.inputErrorMsg}>
+              {errors.zip?.message}
+            </p>
+          </div>
+          <div className={styles.inputContainer}>
+            <label htmlFor='city'>City</label>
+            <input
+              type='text'
+              id='city'
+              {...register('city')}
+              placeholder='New York'
+              className={errors.city ? styles.inputError : ''}
+            />
+            <p role='alert' className={styles.inputErrorMsg}>
+              {errors.city?.message}
+            </p>
+          </div>
+          <div className={styles.inputContainer}>
+            <label htmlFor='country'>Country</label>
+            <input
+              type='text'
+              id='country'
+              {...register('country')}
+              placeholder='United States'
+              className={errors.country ? styles.inputError : ''}
+            />
+            <p role='alert' className={styles.inputErrorMsg}>
+              {errors.country?.message}
+            </p>
+          </div>
         </div>
       </fieldset>
       <fieldset className={styles.field}>

@@ -59,8 +59,10 @@ const Checkout = () => {
   return (
     <form className={styles.checkoutForm} onSubmit={handleSubmit(onSubmit)}>
       <h2 className={styles.title}>Checkout</h2>
-      <CheckoutForm register={register} errors={errors} />
-      <CheckoutSummary />
+      <div className={styles.checkoutContainer}>
+        <CheckoutForm register={register} errors={errors} />
+        <CheckoutSummary />
+      </div>
     </form>
   )
 }

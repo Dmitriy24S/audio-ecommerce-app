@@ -17,6 +17,10 @@
   align-items: center;
   margin-bottom: 2rem;
 }
+.productImage {
+  /* border-radius: 8px; */
+  border-radius: 5px;
+}
 .productDetails {
   margin-left: 1rem;
   width: 100%;
@@ -29,6 +33,7 @@
 .productName {
   text-transform: uppercase;
   font-weight: 700;
+  width: 80%;
 }
 .productQty {
   font-size: 1rem;
@@ -41,6 +46,7 @@
 .priceDetail {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 0.2rem;
 }
 .priceDetail:last-of-type {
@@ -66,4 +72,11 @@
 
 .orderButton {
   width: 100%;
+}
+
+/* TODO: refactor CSS width unify const.? */
+@media (min-width: 980px) {
+  .summaryContainer {
+    width: 33%;
+  }
 }
