@@ -1,0 +1,92 @@
+.cart {
+  background-color: var(--white);
+  border-radius: 10px;
+  /* TODO: refactor CSS */
+  padding: 2rem;
+  color: initial;
+  position: absolute;
+  /* right: 0; */
+  right: -2rem;
+  top: 194%;
+  min-width: 300px;
+  box-shadow: 0 0 10px 3px rgb(0 0 0 / 13%);
+}
+.cartHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.title {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+.clearCartBtn {
+  color: var(--grayDark);
+  text-decoration: underline;
+}
+.clearCartBtn:focus-visible,
+.clearCartBtn:hover {
+  color: var(--brownMedium);
+}
+.cartList {
+  /* margin: 3rem 0; */
+  margin: 1.5rem 0;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+.cartItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.4rem;
+}
+.cartItemDetails {
+  font-weight: 600;
+  font-size: 0.9rem;
+  /* margin: 0 1rem; */
+  margin-right: auto;
+  margin-left: 0.5rem;
+}
+.cartItemName {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.cartItemImage {
+  border-radius: 0.5rem;
+}
+.cartItemPrice {
+  color: var(--grayDark);
+}
+.amountContainer {
+  display: flex;
+  background-color: var(--grayLight);
+  /* TODO: colors recheck CSS refactor */
+  align-items: center;
+}
+.amountContainer button {
+  height: 1.7rem;
+  width: 1.7rem;
+}
+.amountContainer button:hover,
+.amountContainer button:focus-visible {
+  background-color: var(--grayMedium);
+  color: var(--brownMedium);
+}
+.cartItemQty {
+  width: 1.7rem;
+  /* height: 1.7rem;  // not centered text */
+  text-align: center;
+  font-size: 0.9rem;
+}
+.cartFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.totalTitle {
+  color: var(--grayDark);
+}
+.totalPrice {
+  font-weight: 700;
+  font-size: 1.2rem;
+}

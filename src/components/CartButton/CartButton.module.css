@@ -1,0 +1,17 @@
+.cartContainer {
+  position: relative;
+}
+.cartAmount {
+  position: absolute;
+  background-color: var(--brownMedium);
+  color: white;
+  height: 1.3rem;
+  width: 1.3rem;
+  border-radius: 9999px;
+  right: -13px;
+  top: -13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.7rem;
+}
