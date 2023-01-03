@@ -26,6 +26,12 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2px;
+  font-size: 0.8rem;
+}
+@media (min-width: 400px) {
+  .name {
+    font-size: 1rem;
+  }
 }
 
 .navBtn {
