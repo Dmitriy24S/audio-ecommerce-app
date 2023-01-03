@@ -1,4 +1,5 @@
 import { yupResolver } from '@hookform/resolvers/yup'
+import Head from 'next/head'
 import React from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import * as yup from 'yup'
@@ -57,13 +58,18 @@ const Checkout = () => {
   console.log(watchAllFields)
 
   return (
-    <form className={styles.checkoutForm} onSubmit={handleSubmit(onSubmit)}>
-      <h2 className={styles.title}>Checkout</h2>
-      <div className={styles.checkoutContainer}>
-        <CheckoutForm register={register} errors={errors} />
-        <CheckoutSummary />
-      </div>
-    </form>
+    <>
+      <Head>
+        <title>Audio Shop - Checkout</title>
+      </Head>
+      <form className={styles.checkoutForm} onSubmit={handleSubmit(onSubmit)}>
+        <h2 className={styles.title}>Checkout</h2>
+        <div className={styles.checkoutContainer}>
+          <CheckoutForm register={register} errors={errors} />
+          <CheckoutSummary />
+        </div>
+      </form>
+    </>
   )
 }
 
