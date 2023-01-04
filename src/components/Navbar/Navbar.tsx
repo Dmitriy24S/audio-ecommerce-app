@@ -44,6 +44,7 @@ const Navbar = () => {
 
   // Handle click outside - close cart menu
   const cartMenuRef = useRef<HTMLDivElement>(null)
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       // if click element outside dropdown menu - close dropdown menu

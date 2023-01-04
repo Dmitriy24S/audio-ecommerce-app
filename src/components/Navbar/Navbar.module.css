@@ -92,6 +92,10 @@
   color: var(--brownMedium);
 }
 
+/* Cart */
+.cartContainer {
+  position: relative;
+}
 .cartBtn {
   display: flex;
   align-items: center;

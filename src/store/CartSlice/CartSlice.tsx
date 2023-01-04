@@ -1,6 +1,7 @@
 import type { PayloadAction } from '@reduxjs/toolkit'
 import { createSlice } from '@reduxjs/toolkit'
 import { RootState } from '..'
+import { loadCart } from '../../utils/localStorage'
 
 interface CartItem {
   id: string
@@ -10,17 +11,23 @@ interface CartItem {
   qty: number
 }
 
-export interface CartSlice {
+export interface CartSliceType {
   items: CartItem[]
 }
 
-const initialState: CartSlice = {
+const savedLocalState = loadCart()
+// console.log('savedLocalState', savedLocalState)
+// items: Array(1)
+// 0: {id: 'xx99-mark-ii', shortName: 'xx99 mk
+
+const initialState: CartSliceType = {
   items: [],
 }
 
 export const CartSlice = createSlice({
   name: 'cart',
-  initialState,
+  // initialState,
+  initialState: savedLocalState ? savedLocalState : initialState,
   reducers: {
     addToCart: (state, action: PayloadAction<CartItem>) => {
       const addedItem = action.payload
@@ -53,7 +60,7 @@ export const totalCartAmount = (state: RootState) => {
     console.log('cartTotal after:', cartTotal)
     return cartTotal
   }, 0)
-  //   return parseFloat(total.toFixed(2)) // TODO ! not .99 ?
+  // return parseFloat(total.toFixed(2))
   return total
 }
 
