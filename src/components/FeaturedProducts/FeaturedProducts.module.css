@@ -35,7 +35,7 @@
 .cardGray {
   background-color: var(--grayMedium2);
   padding: 2rem;
-  height: 14rem;
+  min-height: 14rem;
 }
 .cardGray:nth-of-type(2) {
   background-image: url('/assets/home/mobile/image-speaker-zx7.jpg');
@@ -61,7 +61,6 @@
 }
 
 .image {
-  border-radius: 10px;
   /* margin-top: 4rem; */
   margin-top: 2rem;
   object-fit: cover;
