@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 import { FieldErrors, UseFormRegister } from 'react-hook-form'
 import { IFormInputs } from '../Checkout/Checkout'
@@ -6,9 +7,10 @@ import styles from './CheckoutForm.module.css'
 interface IProps {
   register: UseFormRegister<IFormInputs>
   errors: Partial<FieldErrors<IFormInputs>>
+  paymentChoice: string
 }
 
-const CheckoutForm = ({ register, errors }: IProps) => {
+const CheckoutForm = ({ register, errors, paymentChoice }: IProps) => {
   //   {
   //     "name": "fddfdf",
   //     "email": "",
@@ -24,8 +26,9 @@ const CheckoutForm = ({ register, errors }: IProps) => {
 
   return (
     <div className={styles.fieldsContainer}>
+      {/* Billing Details */}
       <fieldset className={styles.field}>
-        <legend> Billing Details</legend>
+        <legend>Billing Details</legend>
         <div className={styles.billing}>
           <div className={styles.inputContainer}>
             <label htmlFor='name'>Name</label>
@@ -68,6 +71,7 @@ const CheckoutForm = ({ register, errors }: IProps) => {
           </div>
         </div>
       </fieldset>
+      {/* Shipping Info */}
       <fieldset className={styles.field}>
         <legend>Shipping Info</legend>
         <div className={styles.shipping}>
@@ -125,6 +129,7 @@ const CheckoutForm = ({ register, errors }: IProps) => {
           </div>
         </div>
       </fieldset>
+      {/* Payment Details */}
       <fieldset className={styles.field}>
         <legend>Payment Details</legend>
         <label htmlFor='payment1'>Payment Methods</label>
@@ -158,32 +163,52 @@ const CheckoutForm = ({ register, errors }: IProps) => {
             {errors.payment?.message}
           </p>
         </div>
-        <div className={styles.inputContainer}>
-          <label htmlFor='eMoney'>e-Money Number</label>
-          <input
-            type='number'
-            id='eMoney'
-            {...register('eMoney')}
-            placeholder='238521993'
-            className={errors.eMoney ? styles.inputError : ''}
-          />
-          <p role='alert' className={styles.inputErrorMsg}>
-            {errors.eMoney?.message}
-          </p>
-        </div>
-        <div className={styles.inputContainer}>
-          <label htmlFor='eMoneyPin'>e-Money PIN</label>
-          <input
-            type='number'
-            id='eMoneyPin'
-            {...register('eMoneyPin')}
-            placeholder='6891'
-            className={errors.eMoneyPin ? styles.inputError : ''}
-          />
-          <p role='alert' className={styles.inputErrorMsg}>
-            {errors.eMoneyPin?.message}
-          </p>
-        </div>
+
+        {paymentChoice === 'e-Money' && (
+          <>
+            <div className={styles.inputContainer}>
+              <label htmlFor='eMoney'>e-Money Number</label>
+              <input
+                type='number'
+                id='eMoney'
+                {...register('eMoney')}
+                placeholder='238521993'
+                className={errors.eMoney ? styles.inputError : ''}
+              />
+              <p role='alert' className={styles.inputErrorMsg}>
+                {errors.eMoney?.message}
+              </p>
+            </div>
+            <div className={styles.inputContainer}>
+              <label htmlFor='eMoneyPin'>e-Money PIN</label>
+              <input
+                type='number'
+                id='eMoneyPin'
+                {...register('eMoneyPin')}
+                placeholder='6891'
+                className={errors.eMoneyPin ? styles.inputError : ''}
+              />
+              <p role='alert' className={styles.inputErrorMsg}>
+                {errors.eMoneyPin?.message}
+              </p>
+            </div>
+          </>
+        )}
+        {paymentChoice === 'Cash on Delivery' && (
+          <div className={styles.cashOnDeliveryMessage}>
+            <Image
+              src='/assets/cart/icon-cash-on-delivery.svg'
+              alt='cash payment'
+              height={64}
+              width={64}
+            />
+            <p>
+              The ‘Cash on Delivery’ option enables you to pay in cash when our delivery
+              courier arrives at your residence. Just make sure your address is correct so
+              that your order will not be cancelled.
+            </p>
+          </div>
+        )}
       </fieldset>
     </div>
   )

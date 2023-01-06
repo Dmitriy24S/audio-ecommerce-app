@@ -108,6 +108,20 @@ input.inputError {
   font-size: 0.9rem;
 }
 
+.cashOnDeliveryMessage {
+  display: flex;
+  /* align-items: center; */
+  margin-top: 2rem;
+}
+.cashOnDeliveryMessage img {
+  margin-top: 0.5rem;
+}
+.cashOnDeliveryMessage p {
+  margin-left: 1rem;
+  color: var(--grayDark);
+  font-weight: 400;
+}
+
 @media (min-width: 634px) {
   .inputContainer {
     margin-bottom: 0;

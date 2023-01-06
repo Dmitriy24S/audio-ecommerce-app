@@ -65,7 +65,11 @@ const Checkout = () => {
       <form className={styles.checkoutForm} onSubmit={handleSubmit(onSubmit)}>
         <h2 className={styles.title}>Checkout</h2>
         <div className={styles.checkoutContainer}>
-          <CheckoutForm register={register} errors={errors} />
+          <CheckoutForm
+            register={register}
+            errors={errors}
+            paymentChoice={watchAllFields.payment}
+          />
           <CheckoutSummary />
         </div>
       </form>
