@@ -48,8 +48,8 @@
 }
 
 .inputContainer input:focus-visible,
-.inputContainer input:target,
-.radioInputContainer label:focus-visible {
+.inputContainer input:target {
+  /* .radioInputContainer label:focus-visible { */
   outline-color: var(--brownMediumLight);
 }
 
@@ -57,9 +57,16 @@
   margin-bottom: 0.5rem;
 }
 .radioInputContainer input {
-  display: none;
+  /* display: none; */
+  position: absolute;
+  opacity: 0;
 }
-.radioInputContainer input:checked ~ .radioInput::after {
+.radioInputContainer input:focus-visible ~ label {
+  outline: 2px solid;
+  outline-color: var(--brownMediumLight);
+}
+
+.radioInputContainer input:checked ~ label .radioInput::after {
   content: '';
   position: absolute;
   background-color: var(--brownMedium);

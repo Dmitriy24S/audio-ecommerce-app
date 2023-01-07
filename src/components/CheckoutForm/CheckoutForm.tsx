@@ -134,28 +134,28 @@ const CheckoutForm = ({ register, errors, paymentChoice }: IProps) => {
         <legend>Payment Details</legend>
         <label htmlFor='payment1'>Payment Methods</label>
         <div className={styles.radioInputContainer}>
-          <label htmlFor='payment1' tabIndex={0}>
-            <input
-              type='radio'
-              id='payment1'
-              value='e-Money'
-              title='e-Money'
-              {...register('payment')}
-            />
+          <input
+            type='radio'
+            id='payment1'
+            value='e-Money'
+            title='e-Money'
+            {...register('payment')}
+          />
+          <label htmlFor='payment1'>
             <div className={styles.radioInput}></div>
             e-Money
           </label>
         </div>
         {/* // TODO: focus aria? */}
         <div className={styles.radioInputContainer}>
-          <label htmlFor='payment2' tabIndex={0}>
-            <input
-              type='radio'
-              {...register('payment')}
-              id='payment2'
-              value='Cash on Delivery'
-              title='Cash on Delivery'
-            />
+          <input
+            type='radio'
+            id='payment2'
+            value='Cash on Delivery'
+            title='Cash on Delivery'
+            {...register('payment')}
+          />
+          <label htmlFor='payment2'>
             <div className={styles.radioInput}></div>
             Cash on Delivery
           </label>
