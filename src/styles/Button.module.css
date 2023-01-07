@@ -8,6 +8,7 @@
   letter-spacing: 2px;
   text-transform: uppercase;
   outline-offset: 4px;
+  text-align: center;
 }
 .button:hover,
 .button:focus-visible {

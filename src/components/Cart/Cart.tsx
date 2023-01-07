@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../../store'
@@ -9,6 +10,7 @@ import {
   totalCartAmount,
   totalCartQty,
 } from '../../store/CartSlice/CartSlice'
+import shared from '../../styles/Button.module.css'
 import styles from './Cart.module.css'
 
 const Cart = () => {
@@ -80,6 +82,9 @@ const Cart = () => {
         {/* <div className={styles.totalPrice}>$ {totalCartAmount()}</div> */}
         <div className={styles.totalPrice}>$ {cartTotal}</div>
       </div>
+      <Link href='/checkout' className={shared.button}>
+        Checkout
+      </Link>
     </div>
   )
 }

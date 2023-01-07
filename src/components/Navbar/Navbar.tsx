@@ -37,9 +37,10 @@ const Navbar = () => {
     }
   }, [isMenuOpen])
 
-  // On redirection / new catergory chosen -> close menu
+  // On redirection / new catergory chosen -> close menu & close cart menu
   useEffect(() => {
     setIsMenuOpen(false)
+    setIsCartOpen(false)
   }, [router])
 
   // Handle click outside - close cart menu
