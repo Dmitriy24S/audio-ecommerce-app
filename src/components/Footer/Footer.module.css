@@ -1,7 +1,6 @@
 .footer {
   background-color: var(--blackMedium);
   color: var(--grayLight);
-  padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,13 +16,33 @@
   max-width: 1128px;
   margin: 0 auto;
   width: 100%;
+  padding: 2rem;
+  position: relative;
+}
+.content:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  height: 4px;
+  width: 10rem;
+  background-color: var(--brownMedium);
+}
+/* TODO: screen sizes const? */
+@media (min-width: 650px) {
+  .content:after {
+    left: 2rem;
+    margin: 0;
+    right: auto;
+  }
 }
 /* @media (min-width: 650px) {
   .content {
     width: 86%;
   }
 } */
-
 @media (min-width: 950px) {
   .TopContainer {
     display: flex;
