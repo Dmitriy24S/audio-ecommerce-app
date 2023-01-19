@@ -1,8 +1,9 @@
 import Image from 'next/image'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { addToCart } from '../../store/CartSlice/CartSlice'
 import shared from '../../styles/Button.module.css'
+import Snackbar, { SnackbarShape } from '../Snackbar/Snackbar'
 import styles from './Product.module.css'
 
 export interface IProduct {
@@ -35,12 +36,15 @@ const Product = ({ product }: IProps) => {
   const [amount, setAmount] = useState(1)
   const increaseAmount = () => setAmount((prev) => prev + 1)
   const decreaseAmount = () => amount > 1 && setAmount((prev) => prev - 1)
+  const [lastItemAmount, setLastItemAmount] = useState<number>()
   const dispatch = useDispatch()
+  const snackbarRef = useRef<SnackbarShape>(null)
+  // console.log(snackbarRef.current?.snackbarIsOpen)
 
   // reset product amount to 1 when click on another product
   useEffect(() => {
     setAmount(1)
-    console.log('render Product Page')
+    console.log('reset amount to 1')
   }, [product])
 
   const handleAddToCart = () => {
@@ -53,7 +57,11 @@ const Product = ({ product }: IProps) => {
         qty: amount,
       })
     )
+    setLastItemAmount(amount)
     setAmount(1) // reset back to 1?
+    console.log('reset amount to 1, last item added amount:', amount)
+    // Show snackbar
+    snackbarRef.current?.show()
   }
 
   // Screen Resize - Image change
@@ -81,6 +89,7 @@ const Product = ({ product }: IProps) => {
 
   return (
     <section className={styles.container}>
+      <Snackbar ref={snackbarRef} message={lastItemAmount} />
       <div className={styles.product} key={product.name}>
         {screenSize === 'SMALL' && (
           <Image

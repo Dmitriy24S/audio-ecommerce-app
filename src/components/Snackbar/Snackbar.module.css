@@ -1,0 +1,65 @@
+.snackbar {
+  position: fixed;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  min-width: 13rem;
+  background-color: rgb(11, 175, 63);
+  color: white;
+  left: 2rem;
+  top: 2rem;
+  z-index: 999;
+  letter-spacing: 1px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/* Checkmark svg */
+.snackbar svg {
+  margin-right: 0.7rem;
+}
+
+.show {
+  visibility: visible;
+  /* animation: fadeIn 0.5s, fadeOut 0.5s 2.5s; */
+}
+
+.hide {
+  visibility: hidden;
+}
+
+@keyframes fadeIn {
+  from {
+    top: 0;
+    opacity: 0;
+  }
+  to {
+    top: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    top: 30px;
+    opacity: 1;
+  }
+  to {
+    top: 0;
+    opacity: 0;
+  }
+}
+
+.progress {
+  position: absolute;
+  content: '';
+  background-color: white;
+  bottom: 0;
+  height: 2px;
+  left: 0;
+  right: 0;
+  width: calc(100% * var(--progress, 0));
+  transition: width var(--duration, 1s) linear;
+}
