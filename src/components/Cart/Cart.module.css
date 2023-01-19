@@ -33,16 +33,14 @@
   color: var(--brownMedium);
 }
 .cartList {
-  /* margin: 3rem 0; */
   margin: 1.5rem 0;
-  margin-bottom: 3rem;
   text-align: center;
 }
 .cartItem {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* margin-bottom: 1.4rem; */
+  margin-bottom: 1.4rem;
 }
 .cartItemDetails {
   font-weight: 600;
