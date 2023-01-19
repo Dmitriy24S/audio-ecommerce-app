@@ -46,6 +46,7 @@ const Cart = () => {
             </div>
             <div className={styles.amountContainer}>
               <button
+                id='decrementBtn'
                 onClick={() =>
                   dispatch(
                     decrementItem({

@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 import { RootState } from '..'
 import { loadCart } from '../../utils/localStorage'
 
-interface CartItem {
+export interface CartItem {
   id: string
   shortName: string
   cartImage: string
@@ -13,6 +13,7 @@ interface CartItem {
 
 export interface CartSliceType {
   items: CartItem[]
+  // isCartOpen: boolean
 }
 
 const savedLocalState = loadCart()
@@ -22,6 +23,7 @@ const savedLocalState = loadCart()
 
 const initialState: CartSliceType = {
   items: [],
+  // isCartOpen: false,
 }
 
 export const CartSlice = createSlice({
@@ -42,13 +44,25 @@ export const CartSlice = createSlice({
     decrementItem: (state, action: PayloadAction<Partial<CartItem>>) => {
       const addedItem = action.payload
       const existingItem = state.items.find((item) => item.id === addedItem.id)
-      if (existingItem && existingItem.qty > 1) {
-        existingItem.qty -= 1
+      if (existingItem) {
+        if (existingItem.qty > 1) {
+          console.log('decrement item from cart')
+          existingItem.qty -= 1
+        } else if (existingItem.qty === 1) {
+          console.log('only 1 left? remove it from cart')
+          state.items = state.items.filter((item) => item.id !== existingItem.id)
+          // const updatedItems = state.items.filter((item) => item.id !== existingItem.id)
+          // state.items = updatedItems
+          // state.items = []
+        }
       }
     },
     clearCart: (state) => {
       state.items = []
     },
+    // toggleCart: (state) => {
+    //   state.isCartOpen = !state.isCartOpen
+    // },
   },
 })
 

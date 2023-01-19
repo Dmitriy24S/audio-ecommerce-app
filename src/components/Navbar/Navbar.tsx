@@ -15,6 +15,7 @@ const Navbar = () => {
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev)
+    setIsCartOpen(false) // close cart if open menu, prevent overlap?
   }
 
   const toggleCart = () => {
@@ -41,6 +42,7 @@ const Navbar = () => {
   useEffect(() => {
     setIsMenuOpen(false)
     setIsCartOpen(false)
+    console.log('router change?')
   }, [router])
 
   // Handle click outside - close cart menu
@@ -48,19 +50,32 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
+      // console.log('event.target', event.target)
+      // console.log(cartMenuRef.current)
       // if click element outside dropdown menu - close dropdown menu
-      if (!cartMenuRef.current?.contains(event.target as Element)) {
-        setIsCartOpen(false)
-        console.log('click outside cart -> close cart')
+      if (event.target instanceof Element) {
+        if (
+          !cartMenuRef.current?.contains(event.target) &&
+          event.target.id !== 'decrementBtn'
+          // ignore decrementBtn -> remove last item -> cart item element with clicked btn no longer exist inside ref = without this closes cart anytime decrement/remove last item with 1 amount
+        ) {
+          setIsCartOpen(false)
+          console.log(0, 'click outside cart -> close cart')
+        }
       }
     }
+    // document.addEventListener('click', handleClickOutside)
+    // console.log(444, 'useffect')
     if (isCartOpen) {
       document.addEventListener('click', handleClickOutside)
+      // console.log(111, 'add event listener ')
     } else {
       document.removeEventListener('click', handleClickOutside)
+      // console.log(222, 'remove event listener ')
     }
     return () => {
       document.removeEventListener('click', handleClickOutside)
+      // console.log(333, 'unmount - remove event listener')
     }
   }, [isCartOpen])
 
